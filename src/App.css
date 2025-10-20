@@ -1,0 +1,100 @@
+.page {
+  --location-info-padding: 0.5em;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+}
+
+.map-container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.map {
+  flex: 1 1 0;
+  min-height: 0;
+
+  .marker {
+    background: black;
+    color: white;
+  }
+}
+
+.location-info {
+  flex: 0 0 auto;
+  padding: var(--location-info-padding);
+  flex-basis: 200px;
+
+  @media (prefers-color-scheme: dark) {
+    background: black;
+    color: white;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  & > .body {
+    flex: 1 1 0;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+
+    & > .col1 {
+      flex: 1 1 0;
+      min-height: 0;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      & > .title {
+        flex: 0 0 auto;
+        min-height: 0;
+
+        & > a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 0.4em;
+
+          font-size: 1.5em;
+
+          & > img {
+            width: 1em;
+            height: 1em;
+          }
+
+          & > div {
+            font-weight: bold;
+          }
+        }
+      }
+
+      & > .address {
+        font-style: italic;
+      }
+
+      & > .description {
+        flex: 1 1 0;
+        min-height: 0;
+
+        overflow-y: auto;
+      }
+    }
+
+    & > .col2 {
+      flex: 0 0 auto;
+
+      & > img {
+        height: calc(200px - 2 * var(--location-info-padding));
+      }
+    }
+  }
+}
