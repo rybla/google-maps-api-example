@@ -1,9 +1,9 @@
 {
-  "center": { "lat": 40.71273437048903, "lng": -74.00594785703142 },
+  "center": [40.71273437048903, -74.00594785703142],
   "locations": [
     {
       "name": "City Hall",
-      "pos": { "lat": 40.713350529512994, "lng": -74.00684653581787 },
+      "pos": [40.713350529512994, -74.00684653581787],
       "url": "https://maps.app.goo.gl/9EPRPUtdFfFsyGUB6",
       "imageUrl": "https://www.historyhit.com/app/uploads/bis-images/5154870/shutterstock_585651476-1-788x537.jpg?x81146",
       "description": "New York City Hall is the seat of New York City government, located at the center of City Hall Park in the Civic Center area of Lower Manhattan, between Broadway, Park Row, and Chambers Street."
