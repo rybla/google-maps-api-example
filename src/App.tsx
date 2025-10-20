@@ -37,8 +37,6 @@ const Config = z.object({
 });
 
 export function MapComponent(props: { config: Config }) {
-  // const markerLib = useMapsLibrary("marker");
-
   const [selectedMarkerName, setSelectedMarkerName] = useState<string | null>(
     null,
   );
@@ -53,7 +51,7 @@ export function MapComponent(props: { config: Config }) {
 
   // Handle closing an `InfoWindow`
   function handleClose() {
-    console.log("closing");
+    setSelectedMarkerName(null);
   }
 
   const selectedLocation = props.config.locations.find(
