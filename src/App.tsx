@@ -111,7 +111,7 @@ export function MapComponent(props: { config: Config }) {
             selectedLocation === undefined ? "hidden" : "",
           ].join(" ")}
         >
-          {selectedLocation && (
+          {selectedLocation ? (
             <>
               <div className="body">
                 <div className="col1">
@@ -147,6 +147,55 @@ export function MapComponent(props: { config: Config }) {
                     )}
                   </div>
                 )}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="body">
+                <div className="col1">
+                  <div className="title">
+                    <a href="https://github.com/rybla/google-maps-api-example">
+                      google-maps-api-example
+                    </a>
+                  </div>
+                  <div className="description">
+                    <p>
+                      This is a simple example of using the Google Maps API to
+                      make an interactive maps-based web app. This web app has
+                      the following features:
+                    </p>
+                    <ul>
+                      <li>
+                        Click on a location marker to select it. This highlights
+                        the marker and renders some information about the
+                        location below the map.
+                      </li>
+                      <li>
+                        All of the location information is loaded from
+                        statically-hosted JSON files. Here are some examples:
+                        <ul>
+                          <li>
+                            <a href="./washington-dc.json">
+                              washington-dc.json
+                            </a>
+                          </li>
+                          <li>
+                            <a href="./tokyo.json">tokyo.json</a>
+                          </li>
+                          <li>
+                            <a href="./new-york-city.json">
+                              new-york-city.json
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        The specific JSON file that is chosen to load in the web
+                        app is decided by the config URL search parameter.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </>
           )}
