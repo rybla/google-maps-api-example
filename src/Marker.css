@@ -15,7 +15,7 @@
   padding: 4px 8px;
   transform: translateY(-100%);
   position: absolute;
-  white-space: nowrap;
+  white-space: pre;
 }
 
 .location-icon {

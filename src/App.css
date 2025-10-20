@@ -80,16 +80,10 @@
             height: 1em;
           }
 
-          & > div {
+          & > .name {
             font-weight: bold;
+            white-space: pre-wrap;
           }
-        }
-      }
-
-      & > .address {
-        font-style: italic;
-        & > pre {
-          white-space: pre-wrap;
         }
       }
 
@@ -98,6 +92,11 @@
         min-height: 0;
 
         overflow-y: auto;
+
+        & > .address {
+          font-style: italic;
+          white-space: pre-wrap;
+        }
       }
     }
 

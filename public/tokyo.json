@@ -2,16 +2,17 @@
   "center": [35.68431926457742, 139.7521443468594],
   "locations": [
     {
-      "name": "Tokyo International Forum / 東京国際フォーラム",
+      "name": "Tokyo International Forum\n東京国際フォーラム",
       "pos": [35.67672600391679, 139.76374051031507],
       "url": "https://www.t-i-forum.co.jp/en/",
       "imageUrl": "https://www.erco.com/images/tokyo-international-forum-908/eur-erco-tokyo-international-forum-introp-1-10.jpg",
       "description": "This convention center & performing-arts venue with shops & eateries has a dramatic glass atrium.",
       "type": "architecture",
-      "address": "3 Chome-5-1 Marunouchi, Chiyoda City, Tokyo 100-0005, Japan"
+      "address": "3 Chome-5-1 Marunouchi, Chiyoda City, Tokyo 100-0005, Japan",
+      "rating": 5
     },
     {
-      "name": "Ippodo Tea Stall / 一保堂茶舗",
+      "name": "Ippodo Tea Stall\n一保堂茶舗",
       "pos": [35.68074432754417, 139.77362594972067],
       "url": "https://www.ippodo-tea.co.jp/",
       "imageUrl": "https://teainspoons.com/wp-content/uploads/2018/04/ippodo-tea-768x1024.jpg",
@@ -20,7 +21,7 @@
       "type": "tea"
     },
     {
-      "name": "Ramen Mitsuruya / らあめん満家",
+      "name": "Ramen Mitsuruya\nらあめん満家",
       "pos": [35.69994332682451, 139.69646416603214],
       "url": "https://maps.app.goo.gl/sUgoxBG7Q8gE8pe47",
       "imageUrl": "https://ramenadventures.com/wp-content/uploads/2020/11/20180329-269.jpg",

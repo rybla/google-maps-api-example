@@ -120,20 +120,18 @@ export function MapComponent(props: { config: Config }) {
                       <img
                         src={`https://www.google.com/s2/favicons?domain=${getDomainFromUrl(selectedLocation.url)}&sz=32`}
                       />
-                      <div>{selectedLocation.name}</div>
+                      <div className="name">{selectedLocation.name}</div>
                     </a>
                   </div>
-                  {selectedLocation.rating !== undefined ? (
-                    <div className="rating">
-                      Rating: {selectedLocation.rating}/10
-                    </div>
-                  ) : null}
-                  {selectedLocation.address !== undefined ? (
-                    <div className="address">
-                      <pre>{selectedLocation.address}</pre>
-                    </div>
-                  ) : null}
                   <div className="description">
+                    {selectedLocation.rating !== undefined ? (
+                      <div className="rating">
+                        Rating: {selectedLocation.rating}/10
+                      </div>
+                    ) : null}
+                    {selectedLocation.address !== undefined ? (
+                      <pre className="address">{selectedLocation.address}</pre>
+                    ) : null}
                     <Markdown>{selectedLocation.description}</Markdown>
                   </div>
                 </div>
