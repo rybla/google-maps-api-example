@@ -1,4 +1,6 @@
 html {
+  overflow: hidden;
+
   @media (prefers-color-scheme: dark) {
     background: black;
   }

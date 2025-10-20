@@ -49,11 +49,6 @@ export function MapComponent(props: { config: Config }) {
     setSelectedMarkerName(name);
   }
 
-  // Handle closing an `InfoWindow`
-  function handleClose() {
-    setSelectedMarkerName(null);
-  }
-
   const selectedLocation = props.config.locations.find(
     (loc) => loc.name == selectedMarkerName,
   );
@@ -82,11 +77,9 @@ export function MapComponent(props: { config: Config }) {
 
         {/* Show an InfoWindow if a marker is selected */}
         {selectedLocation && (
-          <InfoWindow
-            anchor={activeMarker}
-            onCloseClick={handleClose}
-            headerContent={<div>{selectedLocation.name}</div>}
-          ></InfoWindow>
+          <InfoWindow headerDisabled anchor={activeMarker}>
+            {selectedLocation.name}
+          </InfoWindow>
         )}
       </Map>
       {
