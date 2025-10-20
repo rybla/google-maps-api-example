@@ -88,7 +88,7 @@ export function MapComponent(props: { config: Config }) {
             position={loc.pos}
             onClick={() => handleMarkerClick(loc.name)}
           >
-            <div className={`location-marker ${loc.type}`}>
+            <div className={`location-marker ${loc.type || ""}`}>
               <div className="location-name">{loc.name}</div>
               <LocationIcon type={loc.type} />
             </div>
