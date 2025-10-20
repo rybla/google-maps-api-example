@@ -1,14 +1,9 @@
-import {
-  AdvancedMarker,
-  APIProvider,
-  InfoWindow,
-  Map,
-  useAdvancedMarkerRef,
-} from "@vis.gl/react-google-maps";
+import { AdvancedMarker, APIProvider, Map } from "@vis.gl/react-google-maps";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import z from "zod";
 import "./App.css";
+import "./Marker.css";
 import { useSearchParams } from "react-router-dom";
 import { Building, Coffee, ShoppingBasket, Utensils, X } from "lucide-react";
 
@@ -65,9 +60,6 @@ export function MapComponent(props: { config: Config }) {
     null,
   );
 
-  // This ref is used to anchor the InfoWindow to the AdvancedMarker
-  const [activeMarkerRef, activeMarker] = useAdvancedMarkerRef();
-
   // Handle clicking on one of the `AdvancedMarker`s
   function handleMarkerClick(name: string) {
     setSelectedMarkerName(name);
@@ -93,20 +85,15 @@ export function MapComponent(props: { config: Config }) {
         {props.config.locations.map((loc) => (
           <AdvancedMarker
             key={loc.name}
-            ref={selectedLocation?.name === loc.name ? activeMarkerRef : null}
             position={loc.pos}
             onClick={() => handleMarkerClick(loc.name)}
           >
-            <LocationIcon type={loc.type} />
+            <div className={`location-marker ${loc.type}`}>
+              <div className="location-name">{loc.name}</div>
+              <LocationIcon type={loc.type} />
+            </div>
           </AdvancedMarker>
         ))}
-
-        {/* Show an InfoWindow if a marker is selected */}
-        {selectedLocation && (
-          <InfoWindow headerDisabled anchor={activeMarker}>
-            {selectedLocation.name}
-          </InfoWindow>
-        )}
       </Map>
       {
         <div

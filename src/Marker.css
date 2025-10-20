@@ -1,0 +1,30 @@
+.location-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location-name {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 8px;
+  transform: translateY(-100%);
+  position: absolute;
+  white-space: nowrap;
+}
+
+.location-icon {
+  padding: 8px;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+}
