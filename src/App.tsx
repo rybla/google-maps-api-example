@@ -7,6 +7,8 @@ import "./Marker.css";
 import { useSearchParams } from "react-router-dom";
 import { Building, Coffee, ShoppingBasket, Utensils, X } from "lucide-react";
 
+const LOCATION_IMAGES_ENABLED = false;
+
 type Pos = z.infer<typeof Pos>;
 const Pos = z.tuple([
   z.number().describe("latitude"),
@@ -135,14 +137,16 @@ export function MapComponent(props: { config: Config }) {
                     <Markdown>{selectedLocation.description}</Markdown>
                   </div>
                 </div>
-                <div className="col2">
-                  {selectedLocation.imageUrl && (
-                    <img
-                      className="thumbnail"
-                      src={selectedLocation.imageUrl}
-                    />
-                  )}
-                </div>
+                {LOCATION_IMAGES_ENABLED && (
+                  <div className="col2">
+                    {selectedLocation.imageUrl && (
+                      <img
+                        className="thumbnail"
+                        src={selectedLocation.imageUrl}
+                      />
+                    )}
+                  </div>
+                )}
               </div>
             </>
           )}
