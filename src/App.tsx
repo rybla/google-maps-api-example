@@ -10,12 +10,16 @@ import Markdown from "react-markdown";
 import z from "zod";
 import "./App.css";
 import { useSearchParams } from "react-router-dom";
+import { Building, Coffee, ShoppingBasket, Utensils, X } from "lucide-react";
 
 type Pos = z.infer<typeof Pos>;
 const Pos = z.object({
   lat: z.number(),
   lng: z.number(),
 });
+
+type LocationType = z.infer<typeof LocationType>;
+const LocationType = z.enum(["restaurant", "tea", "food-shop", "architecture"]);
 
 type Location = z.infer<typeof Location>;
 const Location = z.object({
@@ -28,6 +32,7 @@ const Location = z.object({
   description: z.string(),
   rating: z.optional(z.number().describe("Rating out of 10")),
   address: z.optional(z.string()),
+  type: z.optional(LocationType),
 });
 
 type Config = z.infer<typeof Config>;
@@ -35,6 +40,25 @@ const Config = z.object({
   center: Pos,
   locations: z.array(Location),
 });
+
+function LocationIcon({ type }: { type: LocationType | undefined }) {
+  const icon = (() => {
+    switch (type) {
+      case "restaurant":
+        return <Utensils />;
+      case "food-shop":
+        return <ShoppingBasket />;
+      case "architecture":
+        return <Building />;
+      case "tea":
+        return <Coffee />;
+      default:
+        return <X />;
+    }
+  })();
+
+  return <div className="location-icon">{icon}</div>;
+}
 
 export function MapComponent(props: { config: Config }) {
   const [selectedMarkerName, setSelectedMarkerName] = useState<string | null>(
@@ -72,7 +96,9 @@ export function MapComponent(props: { config: Config }) {
             ref={selectedLocation?.name === loc.name ? activeMarkerRef : null}
             position={loc.pos}
             onClick={() => handleMarkerClick(loc.name)}
-          />
+          >
+            <LocationIcon type={loc.type} />
+          </AdvancedMarker>
         ))}
 
         {/* Show an InfoWindow if a marker is selected */}
