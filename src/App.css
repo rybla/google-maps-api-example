@@ -68,6 +68,12 @@
 
           color: inherit;
           font-size: 1.2em;
+          text-decoration: none;
+
+          border-bottom: 1px solid gray;
+          @media (prefers-color-scheme: dark) {
+            border-bottom-color: lightgray;
+          }
 
           & > img {
             width: 1em;
@@ -82,6 +88,7 @@
 
       & > .address {
         font-style: italic;
+        white-space: pre-wrap;
       }
 
       & > .description {

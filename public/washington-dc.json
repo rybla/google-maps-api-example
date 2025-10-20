@@ -1,16 +1,16 @@
 {
-  "center": { "lat": 38.9072, "lng": -77.0369 },
+  "center": [38.9072, -77.0369],
   "locations": [
     {
       "name": "University of Maryland",
-      "pos": { "lat": 38.9897, "lng": -76.9378 },
+      "pos": [38.9897, -76.9378],
       "url": "https://www.umd.edu/",
       "description": "A public research university in College Park, Maryland.",
       "address": "University of Maryland\nCollege Park, MD 20742 USA"
     },
     {
       "name": "Lincoln Memorial",
-      "pos": { "lat": 38.8893, "lng": -77.0502 },
+      "pos": [38.8893, -77.0502],
       "url": "https://www.nps.gov/linm/index.htm",
       "imageUrl": "https://tapestry-storage-a0fkf0afgte8hndt.z01.azurefd.net/nama-national-mall-training-data/multimedia/NMT_Splash_Image.jpeg",
       "description": "A _national_ monument honoring President Abraham Lincoln.",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Washington D.C.",
-      "pos": { "lat": 38.9072, "lng": -77.0369 },
+      "pos": [38.9072, -77.0369],
       "url": "https://washington.org",
       "description": "The capital of the United States.",
       "rating": 9

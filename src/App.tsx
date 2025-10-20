@@ -8,10 +8,10 @@ import { useSearchParams } from "react-router-dom";
 import { Building, Coffee, ShoppingBasket, Utensils, X } from "lucide-react";
 
 type Pos = z.infer<typeof Pos>;
-const Pos = z.object({
-  lat: z.number(),
-  lng: z.number(),
-});
+const Pos = z.tuple([
+  z.number().describe("latitude"),
+  z.number().describe("longitude"),
+]);
 
 type LocationType = z.infer<typeof LocationType>;
 const LocationType = z.enum(["restaurant", "tea", "food-shop", "architecture"]);
@@ -75,7 +75,10 @@ export function MapComponent(props: { config: Config }) {
         className="map"
         mapId="default"
         // The default center is the position of the very first marker.
-        defaultCenter={props.config.center}
+        defaultCenter={{
+          lat: props.config.center[0],
+          lng: props.config.center[1],
+        }}
         defaultZoom={12}
         gestureHandling={"greedy"}
         disableDefaultUI={true}
@@ -85,10 +88,14 @@ export function MapComponent(props: { config: Config }) {
         {props.config.locations.map((loc) => (
           <AdvancedMarker
             key={loc.name}
-            position={loc.pos}
+            position={{ lat: loc.pos[0], lng: loc.pos[1] }}
             onClick={() => handleMarkerClick(loc.name)}
           >
-            <div className={`location-marker ${loc.type || ""}`}>
+            <div
+              className={`location-marker ${loc.type || ""} ${
+                selectedLocation?.name === loc.name ? "selected" : ""
+              }`}
+            >
               <div className="location-name">{loc.name}</div>
               <LocationIcon type={loc.type} />
             </div>
