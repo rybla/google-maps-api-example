@@ -53,7 +53,7 @@ export function MapComponent(props: { config: Config }) {
 
   // Handle closing an `InfoWindow`
   function handleClose() {
-    setSelectedMarkerName(null);
+    console.log("closing");
   }
 
   const selectedLocation = props.config.locations.find(

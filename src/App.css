@@ -1,4 +1,5 @@
 .page {
+  --location-info-height: min(200px, 20vh);
   --location-info-padding: 0.5em;
 }
 
@@ -28,7 +29,8 @@
 .location-info {
   flex: 0 0 auto;
   padding: var(--location-info-padding);
-  flex-basis: 200px;
+  flex-basis: var(--location-info-height);
+  /*flex-basis: 200px;*/
 
   @media (prefers-color-scheme: dark) {
     background: black;
@@ -93,7 +95,9 @@
       flex: 0 0 auto;
 
       & > img {
-        height: calc(200px - 2 * var(--location-info-padding));
+        height: calc(
+          var(--location-info-height) - (2 * var(--location-info-padding))
+        );
       }
     }
   }
