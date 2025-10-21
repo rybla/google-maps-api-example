@@ -75,7 +75,7 @@ export function MapComponent(props: { config: Config }) {
     <div className="map-container">
       <Map
         className="map"
-        mapId="default"
+        mapId="92bdc049752ec6f834783dee"
         defaultCenter={{
           lat: props.config.center[0],
           lng: props.config.center[1],
