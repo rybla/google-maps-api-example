@@ -83,8 +83,7 @@ export function MapComponent(props: { config: Config }) {
         defaultZoom={12}
         gestureHandling={"greedy"}
         disableDefaultUI={true}
-        colorScheme="FOLLOW_SYSTEM"
-        renderingType="VECTOR"
+        colorScheme="LIGHT"
       >
         {props.config.locations.map((loc) => (
           <AdvancedMarker
