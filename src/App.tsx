@@ -76,7 +76,6 @@ export function MapComponent(props: { config: Config }) {
       <Map
         className="map"
         mapId="default"
-        // The default center is the position of the very first marker.
         defaultCenter={{
           lat: props.config.center[0],
           lng: props.config.center[1],
